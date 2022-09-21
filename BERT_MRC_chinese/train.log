@@ -1,0 +1,343 @@
+nohup: ignoring input
+2022-03-25 21:49:59.532979: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2022-03-25 21:49:59.533033: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Namespace(bert_model='./pretrained_model/hfl_chinese-roberta-wwm-ext/', checkpoint=500, clip_grad=1, config_path='./pretrained_model/hfl_chinese-roberta-wwm-ext/config.json', data_cache=True, data_dir='./data/zh_msra/', data_sign='MSRA', dev_batch_size=2, device=device(type='cuda', index=0), dropout=0.2, entity_sign='flat', entity_threshold=0.5, export_model=True, gradient_accumulation_steps=1, hidden_size=768, learning_rate=5e-05, local_rank=-1, max_seq_length=256, n_gpu=1, num_train_epochs=10, output_dir='./output', seed=2333, task_name=None, test_batch_size=2, train_batch_size=32, warmup_proportion=0.1, weight_end=1.0, weight_span=1.0, weight_start=1.0)
+Some weights of the model checkpoint at ./pretrained_model/hfl_chinese-roberta-wwm-ext/ were not used when initializing BertModel: ['cls.predictions.bias', 'cls.seq_relationship.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.weight', 'cls.seq_relationship.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight']
+- This IS expected if you are initializing BertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+-*--*--*--*--*--*--*--*--*--*-
+current data_sign: MSRA
+=*==*==*==*==*==*==*==*==*==*=
+loading train data ... ...
+38517
+38517 train data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading dev data ... ...
+2712
+2712 dev data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading test data ... ...
+3277
+3277 test data loaded
+######################################################################
+EPOCH:  0
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:0/10 step:500/12036 loss:0.00236064987257123
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0069 0.7461 0.8426 0.8593 0.8509
+SAVED model path is :
+./output/bert_finetune_model.bin
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+Best DEV : overall best loss, acc, precision, recall, f1 
+0.0069 0.7461 0.8426 0.8593 0.8509
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:0/10 step:1000/12036 loss:0.001073729363270104
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0042 0.8165 0.8996 0.9104 0.9049
+SAVED model path is :
+./output/bert_finetune_model.bin
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+Best DEV : overall best loss, acc, precision, recall, f1 
+0.0042 0.8165 0.8996 0.9104 0.9049
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+-*--*--*--*--*--*--*--*--*--*-
+current data_sign: MSRA
+=*==*==*==*==*==*==*==*==*==*=
+loading train data ... ...
+38517
+38517 train data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading dev data ... ...
+2712
+2712 dev data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading test data ... ...
+3277
+3277 test data loaded
+######################################################################
+EPOCH:  1
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:1/10 step:1500/12036 loss:0.0024336962960660458
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0033 0.8734 0.9297 0.9311 0.9304
+SAVED model path is :
+./output/bert_finetune_model.bin
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+Best DEV : overall best loss, acc, precision, recall, f1 
+0.0033 0.8734 0.9297 0.9311 0.9304
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:1/10 step:2000/12036 loss:0.00499814935028553
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0033 0.8683 0.946 0.9226 0.9341
+SAVED model path is :
+./output/bert_finetune_model.bin
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+Best DEV : overall best loss, acc, precision, recall, f1 
+0.0033 0.8683 0.946 0.9226 0.9341
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+-*--*--*--*--*--*--*--*--*--*-
+current data_sign: MSRA
+=*==*==*==*==*==*==*==*==*==*=
+loading train data ... ...
+38517
+38517 train data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading dev data ... ...
+2712
+2712 dev data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading test data ... ...
+3277
+3277 test data loaded
+######################################################################
+EPOCH:  2
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:2/10 step:2500/12036 loss:0.00044789764797315
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0031 0.8767 0.9421 0.9271 0.9345
+SAVED model path is :
+./output/bert_finetune_model.bin
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+Best DEV : overall best loss, acc, precision, recall, f1 
+0.0031 0.8767 0.9421 0.9271 0.9345
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:2/10 step:3000/12036 loss:4.860918124904856e-05
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0037 0.8726 0.938 0.9325 0.9352
+SAVED model path is :
+./output/bert_finetune_model.bin
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+Best DEV : overall best loss, acc, precision, recall, f1 
+0.0037 0.8726 0.938 0.9325 0.9352
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:2/10 step:3500/12036 loss:0.00021509492944460362
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0037 0.8691 0.9351 0.9261 0.9306
+-*--*--*--*--*--*--*--*--*--*-
+current data_sign: MSRA
+=*==*==*==*==*==*==*==*==*==*=
+loading train data ... ...
+38517
+38517 train data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading dev data ... ...
+2712
+2712 dev data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading test data ... ...
+3277
+3277 test data loaded
+######################################################################
+EPOCH:  3
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:3/10 step:4000/12036 loss:0.0005238582380115986
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0038 0.8677 0.9462 0.9151 0.9304
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:3/10 step:4500/12036 loss:0.0007810855167917907
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0043 0.8668 0.924 0.9407 0.9323
+-*--*--*--*--*--*--*--*--*--*-
+current data_sign: MSRA
+=*==*==*==*==*==*==*==*==*==*=
+loading train data ... ...
+38517
+38517 train data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading dev data ... ...
+2712
+2712 dev data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading test data ... ...
+3277
+3277 test data loaded
+######################################################################
+EPOCH:  4
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:4/10 step:5000/12036 loss:0.00015652526053600013
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0046 0.8721 0.9431 0.9325 0.9378
+SAVED model path is :
+./output/bert_finetune_model.bin
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+Best DEV : overall best loss, acc, precision, recall, f1 
+0.0046 0.8721 0.9431 0.9325 0.9378
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:4/10 step:5500/12036 loss:0.0004992213216610253
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0045 0.8618 0.9133 0.9391 0.926
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:4/10 step:6000/12036 loss:0.00031189346918836236
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0053 0.8737 0.9322 0.9412 0.9367
+-*--*--*--*--*--*--*--*--*--*-
+current data_sign: MSRA
+=*==*==*==*==*==*==*==*==*==*=
+loading train data ... ...
+38517
+38517 train data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading dev data ... ...
+2712
+2712 dev data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading test data ... ...
+3277
+3277 test data loaded
+######################################################################
+EPOCH:  5
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:5/10 step:6500/12036 loss:0.00011163125600432977
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.004 0.8686 0.9422 0.9252 0.9336
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:5/10 step:7000/12036 loss:5.095648157293908e-05
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0046 0.8656 0.9382 0.9362 0.9372
+-*--*--*--*--*--*--*--*--*--*-
+current data_sign: MSRA
+=*==*==*==*==*==*==*==*==*==*=
+loading train data ... ...
+38517
+38517 train data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading dev data ... ...
+2712
+2712 dev data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading test data ... ...
+3277
+3277 test data loaded
+######################################################################
+EPOCH:  6
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:6/10 step:7500/12036 loss:5.530624184757471e-05
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0045 0.8696 0.9368 0.9318 0.9343
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:6/10 step:8000/12036 loss:1.828962194849737e-05
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0046 0.8672 0.9267 0.9167 0.9217
+-*--*--*--*--*--*--*--*--*--*-
+current data_sign: MSRA
+=*==*==*==*==*==*==*==*==*==*=
+loading train data ... ...
+38517
+38517 train data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading dev data ... ...
+2712
+2712 dev data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading test data ... ...
+3277
+3277 test data loaded
+######################################################################
+EPOCH:  7
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:7/10 step:8500/12036 loss:0.00019205251010134816
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0045 0.8761 0.9326 0.9374 0.935
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:7/10 step:9000/12036 loss:0.0006246808916330338
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0054 0.8796 0.9425 0.9336 0.9381
+SAVED model path is :
+./output/bert_finetune_model.bin
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+Best DEV : overall best loss, acc, precision, recall, f1 
+0.0054 0.8796 0.9425 0.9336 0.9381
+=&==&==&==&==&==&==&==&==&==&==&==&==&==&==&=
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:7/10 step:9500/12036 loss:0.00021190327242948115
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0051 0.8649 0.9482 0.9125 0.93
+-*--*--*--*--*--*--*--*--*--*-
+current data_sign: MSRA
+=*==*==*==*==*==*==*==*==*==*=
+loading train data ... ...
+38517
+38517 train data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading dev data ... ...
+2712
+2712 dev data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading test data ... ...
+3277
+3277 test data loaded
+######################################################################
+EPOCH:  8
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:8/10 step:10000/12036 loss:0.00024512148229405284
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0052 0.8697 0.9373 0.9322 0.9348
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:8/10 step:10500/12036 loss:0.00021933495008852333
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0057 0.8546 0.9237 0.9146 0.9191
+-*--*--*--*--*--*--*--*--*--*-
+current data_sign: MSRA
+=*==*==*==*==*==*==*==*==*==*=
+loading train data ... ...
+38517
+38517 train data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading dev data ... ...
+2712
+2712 dev data loaded
+=*==*==*==*==*==*==*==*==*==*=
+loading test data ... ...
+3277
+3277 test data loaded
+######################################################################
+EPOCH:  9
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:9/10 step:11000/12036 loss:0.003465833608061075
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0057 0.8616 0.9146 0.9245 0.9195
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:9/10 step:11500/12036 loss:9.987930388888344e-05
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0043 0.8824 0.9375 0.9358 0.9366
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*-
+【train】 epoch:9/10 step:12000/12036 loss:7.415581785608083e-05
+............................................................
+DEV: loss, acc, precision, recall, f1
+0.0045 0.8706 0.9325 0.9395 0.936
