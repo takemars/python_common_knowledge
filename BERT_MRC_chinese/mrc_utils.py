@@ -82,12 +82,13 @@ def convert_examples_to_features(examples, tokenizer, label_lst, max_seq_length,
             fake_start_pos = [0] * len(whitespace_doc)
             fake_end_pos = [0] * len(whitespace_doc)
             for start_item in example.start_position:
-                fake_start_pos[int(start_item)] = 1
+                # fake_start_pos[int(start_item)] = 1
+                fake_start_pos.insert(int(start_item), 1)
             for end_item in example.end_position:
                 # if int(end_item) >= len(fake_end_pos):
                 #     print("stop")
-                fake_end_pos[int(end_item)] = 1
-
+                # fake_end_pos[int(end_item)] = 1
+                fake_end_pos.insert(int(end_item), 1)
             # improve answer span
             for idx, (token, start_label, end_label) in enumerate(zip(whitespace_doc, fake_start_pos, fake_end_pos)):
                 tmp_subword_lst = tokenizer.tokenize(token)
